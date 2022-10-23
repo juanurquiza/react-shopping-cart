@@ -1,70 +1,75 @@
-# Getting Started with Create React App
+# React Shopping Cart
 
-This project was bootstrapped with [Create React App](https://github.com/facebook/create-react-app).
+A very simple shopping cart PoC, intended as a guide to learn React :)
 
-## Available Scripts
+## File structure
 
-In the project directory, you can run:
+This is the current file structure we want to follow:
 
-### `npm start`
+```
+src
+|___ services/
+|______ http.js
+|______ http.test.js
+|___ containers/
+|______ Main.js
+|___ components/
+|______ ProductList/
+|_________ index.js
+|_________ index.test.js
+|_________ styles.scss
+|______ Product/
+|_________ index.js
+|_________ index.test.js
+|_________ styles.scss
+|______ Cart/
+|_________ index.js
+|_________ index.test.js
+|_________ styles.scss
+|___ models/
+|______ Product/
+|_________ index.js
+|_________ index.test.js
+|______ Cart/
+|_________ index.js
+|_________ index.test.js
+```
 
-Runs the app in the development mode.\
-Open [http://localhost:3000](http://localhost:3000) to view it in your browser.
+### services/
 
-The page will reload when you make changes.\
-You may also see any lint errors in the console.
+Here we'll store all the services, this is code that others can use globally
+within the application.
 
-### `npm test`
+#### http.js
 
-Launches the test runner in the interactive watch mode.\
-See the section about [running tests](https://facebook.github.io/create-react-app/docs/running-tests) for more information.
+This service handles the HTTP communication with external APIs
 
-### `npm run build`
+### containers/
 
-Builds the app for production to the `build` folder.\
-It correctly bundles React in production mode and optimizes the build for the best performance.
+Each container should be a page, which it's own route.
 
-The build is minified and the filenames include the hashes.\
-Your app is ready to be deployed!
+#### Main.js
 
-See the section about [deployment](https://facebook.github.io/create-react-app/docs/deployment) for more information.
+The main container, for now it will be the only container, since we use just one page
 
-### `npm run eject`
+### components/
 
-**Note: this is a one-way operation. Once you `eject`, you can't go back!**
+Here we'll store the visual components which will be included in the container(s)
+Each component will have the component itself (index.js) and the corresponding
+unit test (index.test.js). We should also have a `styles.scss` file with the
+styling for that component.
 
-If you aren't satisfied with the build tool and configuration choices, you can `eject` at any time. This command will remove the single build dependency from your project.
+#### ProductList/
 
-Instead, it will copy all the configuration files and the transitive dependencies (webpack, Babel, ESLint, etc) right into your project so you have full control over them. All of the commands except `eject` will still work, but they will point to the copied scripts so you can tweak them. At this point you're on your own.
+The view for the product list will be defined here
 
-You don't have to ever use `eject`. The curated feature set is suitable for small and middle deployments, and you shouldn't feel obligated to use this feature. However we understand that this tool wouldn't be useful if you couldn't customize it when you are ready for it.
+### Product/
 
-## Learn More
+The product item will be defined here. It will be included within `ProductList` component
+at some point.
 
-You can learn more in the [Create React App documentation](https://facebook.github.io/create-react-app/docs/getting-started).
+### models/
 
-To learn React, check out the [React documentation](https://reactjs.org/).
-
-### Code Splitting
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/code-splitting](https://facebook.github.io/create-react-app/docs/code-splitting)
-
-### Analyzing the Bundle Size
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/analyzing-the-bundle-size](https://facebook.github.io/create-react-app/docs/analyzing-the-bundle-size)
-
-### Making a Progressive Web App
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/making-a-progressive-web-app](https://facebook.github.io/create-react-app/docs/making-a-progressive-web-app)
-
-### Advanced Configuration
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/advanced-configuration](https://facebook.github.io/create-react-app/docs/advanced-configuration)
-
-### Deployment
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/deployment](https://facebook.github.io/create-react-app/docs/deployment)
-
-### `npm run build` fails to minify
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/troubleshooting#npm-run-build-fails-to-minify](https://facebook.github.io/create-react-app/docs/troubleshooting#npm-run-build-fails-to-minify)
+Here we define each model. For now we'll have `Product` and `Cart` models, in which we'll define
+the behavior of each entity. As in the rest of the modules, we'll also have the unit tests
+for each model.
