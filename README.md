@@ -8,6 +8,8 @@ This is the current file structure we want to follow:
 
 ```
 src
+|___ __mocks__/
+|______ product.js
 |___ services/
 |______ http.js
 |______ http.test.js
@@ -34,6 +36,12 @@ src
 |_________ index.js
 |_________ index.test.js
 ```
+
+### \_\_mocks\_\_/
+
+In this folder we'll place the mocks, this is, we'll "fake" the API
+responses, since we don't want to make real requests when
+we run the tests.
 
 ### services/
 
@@ -63,7 +71,7 @@ styling for that component.
 
 The view for the product list will be defined here
 
-### Product/
+#### Product/
 
 The product item will be defined here. It will be included within `ProductList` component
 at some point.
