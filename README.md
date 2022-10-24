@@ -9,32 +9,32 @@ This is the current file structure we want to follow:
 ```
 src
 |___ __mocks__/
-|______ product.js
+|    |___ product.js
 |___ services/
-|______ http.js
-|______ http.test.js
+|    |__ http.js
+|    |__ http.test.js
 |___ containers/
-|______ Main.js
+|    |__ Main.js
 |___ components/
-|______ ProductList/
-|_________ index.js
-|_________ index.test.js
-|_________ styles.scss
-|______ Product/
-|_________ index.js
-|_________ index.test.js
-|_________ styles.scss
-|______ Cart/
-|_________ index.js
-|_________ index.test.js
-|_________ styles.scss
+|    |__ ProductList/
+|    |   |__ index.js
+|    |   |__ index.test.js
+|    |   |__ styles.scss
+|    |__ Product/
+|    |   |__ index.js
+|    |   |__ index.test.js
+|    |   |__ styles.scss
+|    |__ Cart/
+|        |__ index.js
+|        |__ index.test.js
+|        |__ styles.scss
 |___ models/
-|______ Product/
-|_________ index.js
-|_________ index.test.js
-|______ Cart/
-|_________ index.js
-|_________ index.test.js
+     |__ Product/
+     |   |__ index.js
+     |   |__ index.test.js
+     |__ Cart/
+         |__ index.js
+         |__ index.test.js
 ```
 
 ### \_\_mocks\_\_/
