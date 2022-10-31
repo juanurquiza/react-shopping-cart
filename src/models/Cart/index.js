@@ -7,13 +7,16 @@ class Cart {
     const existingItem = this.items.find(i => i.id === product.id)
     if (existingItem) {
       existingItem.quantity += 1
+      return existingItem
     } else {
-      this.items.push({
+      const newItem = {
         id: product.id,
         name: product.title,
         price: product.price,
         quantity: 1,
-      })
+      }
+      this.items.push(newItem)
+      return newItem
     }
   }
 

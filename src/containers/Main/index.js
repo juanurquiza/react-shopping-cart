@@ -1,5 +1,8 @@
+import 'bootstrap/dist/css/bootstrap.min.css'
 import { useEffect, useState } from 'react'
 import Product from 'models/Product'
+import Cart from 'models/Cart'
+import ProductList from 'components/ProductList'
 import './main.css'
 
 // TODO: add tests for this component once we have it working.
@@ -9,6 +12,7 @@ function App() {
   // TODO: Later, we'll use the Context to share the state.
   // And then, we'll switch to Redux to handle de application state.
   const [products, setProducts] = useState([])
+  const cart = new Cart()
 
   useEffect(() => {
     async function fetchData() {
@@ -26,7 +30,10 @@ function App() {
         </p>
       </header>
       <section className="body">
-        And here the body (e.g. product list, etc)
+        <ProductList
+          products={products}
+          cart={cart}
+        />
       </section>
     </div>
   )
